@@ -1,0 +1,73 @@
+#root {
+  margin: 0;
+}
+
+.App{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  margin: 0;
+}
+h1 {
+  text-transform: uppercase;
+}
+
+.pages {
+  margin: 0 150px;
+  display: flex;
+  /* justify-content: center; */
+}
+
+.footer {
+  margin-top: auto;
+  width: 100%;
+  display: inline-block;
+  background: #ccc;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 10px 0;
+}
+
+button:hover {
+  background-color: #3e8e41; /* Dark green */
+}
+
+input {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .App {
+    display: flex;
+    margin: 0;
+  }
+  .pages {
+    margin: 0 20px; /* Prilagođene margine na manjim ekranima */
+    justify-content: center; /* Poravnanje na sredinu na manjim ekranima */
+  }
+
+  .footer {
+    font-size: 18px;
+  }
+}

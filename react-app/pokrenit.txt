@@ -1,0 +1,3 @@
+npm run dev
+
+json-server --watch azil.json --port 3001

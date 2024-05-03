@@ -1,0 +1,59 @@
+.contact {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 75%;
+}
+
+.topicText p {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.inputBox {
+    height: 40px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.inputBox input, .inputBox textarea {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    background: #F0F1F8;
+    border-radius: 6px;
+    resize: none;
+    padding: 0 6px;
+}
+
+.messageBox {
+    min-height: 100px;
+}
+
+.inputBox textarea {
+    padding-top: 5px;
+}
+
+.contactBtn {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+input[type="button"] {
+    color: #fff;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background: #3e2093;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+input[type="button"]:hover {
+    background: #5029bc;
+}

@@ -1,0 +1,243 @@
+{
+  "obavijesti": [
+    {
+      "id": 1,
+      "naslov": "Akcija udomljavanje",
+      "datum": "2023-04-17",
+      "tekst": "Ova akcija udomljavanja je pokrenuta kako bi se promoviralo udomljavanje životinja iz azila, a ujedno i kako bi se olakšalo njihovo udomljavanje. Azil za životinje želi nagraditi one koji udomljavaju životinje iz azila, pa se ova akcija nudi kao poticaj. Veterinarska skrb je besplatna kako bi se novi vlasnici osigurali da će njihov novi ljubimac biti zdrav i njegovan, a time se osigurava i bolji uvjeti za životinje u azilu.",
+      "vazno": true
+    },
+    {
+      "id": 2,
+      "naslov": "Hvala na podršci",
+      "datum": "2023-02-17",
+      "tekst": "Svaka donacija hrane, igračaka i ostalih potrepština je vrlo cijenjena. Ova donacija hrane je stigla od lokalne tvrtke, koja se prepoznala u našem radu i željela pomoći. Svi ljubimci u azilu će biti zahvalni na ovom gestu, a ova donacija će pomoći u osiguravanju boljih uvjeta i kvalitetne prehrane za sve životinje u azilu.",
+      "vazno": false
+    },
+    {
+      "id": 3,
+      "naslov": "Druženje",
+      "datum": "2023-02-17",
+      "tekst": "Azil za životinje uvijek je spreman pružiti siguran i topli dom životinjama koje nemaju gdje drugdje otići. Ubrzo nam dolaze nove životinje koje traže ljubav i dom, a ovom obavijesti želimo pozvati sve ljubitelje životinja da razmisle o udomljavanju novog ljubimca. Svaka životinja zaslužuje topli dom i ljubav, a udomljavanjem iz azila spašava se ne samo jedan, nego dva života - udomljenjem se oslobađa mjesto za novog stanovnika azila.",
+      "vazno": false
+    },
+    {
+      "id": 4,
+      "naslov": "Međunarodni dan mačaka",
+      "datum": "2022-08-8",
+      "tekst": "Danas, 8. kolovoza, diljem svijeta obilježava se Međunarodni dan mačaka! Ovo je dan kada slavimo ove prekrasne i nezavisne stvorenja koja nam toliko radosti donose u život. Neka vaši mačići danas uživaju u svim poslasticama, igračkama i mazilima koje im pripremite, a mi vas podsjećamo da je važno brinuti se o svojim ljubimcima tijekom cijele godine. Sretno i mačkoliko mišljenje svima!",
+      "vazno": false
+    }
+  ],
+  "donacije": [
+    {
+      "id": 1,
+      "kategorija": "donirano",
+      "tip": "Hrana",
+      "vrijednost": 25,
+      "opis": "Suha hrana za pse - 10kg"
+    },
+    {
+      "id": 2,
+      "kategorija": "donirano",
+      "tip": "Igračke",
+      "vrijednost": 15,
+      "opis": "Grebalica za mačke"
+    },
+    {
+      "id": 3,
+      "kategorija": "donirano",
+      "tip": "Ostalo",
+      "vrijednost": 25,
+      "opis": "Kavez za srednje papige"
+    },
+    {
+      "id": 4,
+      "kategorija": "donirano",
+      "tip": "Veterinar",
+      "vrijednost": 30,
+      "opis": "Cjepivo"
+    },
+    {
+      "tip": "Igračke",
+      "vrijednost": 15,
+      "opis": "Grebalica za mačke",
+      "kategorija": "nudi",
+      "id": 8
+    },
+    {
+      "kategorija": "donirano",
+      "tip": "Igračka",
+      "vrijednost": "8",
+      "opis": "Dvostruki konop",
+      "id": 9
+    },
+    {
+      "tip": "Veterinar",
+      "vrijednost": 30,
+      "opis": "Cjepivo",
+      "kategorija": "trazi",
+      "id": 11
+    },
+    {
+      "tip": "Igračka",
+      "vrijednost": "8",
+      "opis": "Dvostruki konop",
+      "kategorija": "trazi",
+      "id": 12
+    },
+    {
+      "kategorija": "trazi",
+      "tip": "Veterinar",
+      "vrijednost": "20",
+      "opis": "Troskovi kod veternirara",
+      "id": 13
+    }
+  ],
+  "zivotinje": [
+    {
+      "id": 1,
+      "ime": "Garfield",
+      "vrsta": "Pas",
+      "photo": "https://ichef.bbci.co.uk/news/976/cpsprodpb/AD5D/production/_106018344_garf_face.jpg",
+      "cip": true,
+      "godine": 44,
+      "opis": "Voli lazanje",
+      "pregled": "29-3-2023",
+      "udomljen": true
+    },
+    {
+      "id": 2,
+      "ime": "Lori",
+      "vrsta": "Pas",
+      "photo": "https://images.squarespace-cdn.com/content/v1/5ca7884cc46f6d78a80f81ab/1612206764757-WYI3KFLNNKQ2M8KOJ12X/image-asset.jpeg?format=2500w",
+      "cip": false,
+      "godine": "3",
+      "opis": "Više od običnog psa",
+      "pregled": "2023-03-09",
+      "udomljen": true
+    },
+    {
+      "id": 3,
+      "ime": "Zorro",
+      "vrsta": "Pas",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR-GZRzmK4TH0YOPxIWjcgG0MEqfyvbxYfVg&usqp=CAU",
+      "cip": true,
+      "godine": 50,
+      "opis": "Voli spavati",
+      "pregled": "2000-02-13",
+      "udomljen": true
+    },
+    {
+      "id": 4,
+      "ime": "Bella",
+      "vrsta": "Mačka",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTILEXvG94WsWCzo4uogXqnXoNUvxJSmIh_4Q&usqp=CAU",
+      "cip": true,
+      "godine": 50,
+      "opis": "Slatkica",
+      "pregled": "2000-02-13",
+      "udomljen": false
+    },
+    {
+      "id": 5,
+      "ime": "Lu",
+      "vrsta": "Pas",
+      "photo": "https://www.rd.com/wp-content/uploads/2017/11/05-amazon-9-Powerful-Ways-to-Give-to-Charity-Without-Breaking-the-Bank_527124532-Pongsatorn-Singnoy.jpg",
+      "cip": true,
+      "godine": 50,
+      "opis": "Voli spavati",
+      "pregled": "2000-02-13",
+      "udomljen": true
+    },
+    {
+      "ime": "Asi",
+      "vrsta": "Pas",
+      "photo": "https://media.glamour.com/photos/56959a2293ef4b09520d6393/master/w_1600%2Cc_limit/home-2015-10-8-cute-shelter-dogs-delaware-1023-courtesy-petfinder-main.jpg",
+      "cip": true,
+      "godine": "",
+      "opis": "Jako vesela i razigrana",
+      "pregled": "2023-03-24",
+      "udomljen": true,
+      "id": 6
+    },
+    {
+      "ime": "Loki",
+      "vrsta": "Mačka",
+      "photo": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA15Id3X.img?h=630&w=1200&m=6&q=60&o=t&l=f&f=jpg",
+      "cip": false,
+      "godine": "4",
+      "opis": "Treba puno pažnje. ",
+      "pregled": "",
+      "udomljen": true,
+      "id": 7
+    },
+    {
+      "ime": "Lada, Vihor i Lobel",
+      "vrsta": "Mačka",
+      "photo": "https://hips.hearstapps.com/hmg-prod/images/kittens-sitting-in-cage-at-animal-shelter-royalty-free-image-1589830343.jpg",
+      "cip": false,
+      "godine": "",
+      "opis": "Potreban privremeni dom.",
+      "pregled": "2023-04-03",
+      "udomljen": true,
+      "id": 8
+    },
+    {
+      "id": 9,
+      "ime": "Mica",
+      "vrsta": "Mačka",
+      "photo": "https://www.petfoodindustry.com/ext/resources/Images-by-month-year/20_06/200706-cat-in-shelter-cage.jpg?height=635&t=1607028743&width=1200",
+      "cip": false,
+      "godine": 2,
+      "opis": "Brz i spreman za igru",
+      "pregled": "5-5-2023",
+      "udomljen": false
+    },
+    {
+      "id": 10,
+      "ime": "Bugs",
+      "vrsta": "Ostalo",
+      "photo": "https://media.istockphoto.com/id/496612844/photo/rabbits-in-cage.jpg?s=612x612&w=0&k=20&c=Vrb8qAtDXppPcgNpa-qYgkN7DSABLJF2JsejN-KepsE=",
+      "cip": false,
+      "godine": 3,
+      "opis": "Volim biti sam",
+      "pregled": "12-5-2023",
+      "udomljen": true
+    },
+    {
+      "ime": "Rex",
+      "vrsta": "Pas",
+      "photo": "https://slika.nezavisne.rs/2018/08/750x450/20180828214110_494850.jpg",
+      "cip": true,
+      "godine": "2",
+      "opis": "Zaigran i veseo.",
+      "pregled": "2023-04-06",
+      "udomljen": false,
+      "id": 11
+    }
+  ],
+  "vrste": [
+    "Mačka",
+    "Pas",
+    "Ostalo"
+  ],
+  "tipDonacija": [
+    "Hrana",
+    "Igračka",
+    "Lijekovi",
+    "Veterinar"
+  ],
+  "admin": [
+    {
+      "id": 1,
+      "username": "ivana",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "username": "ana",
+      "password": "anaana"
+    }
+  ]
+}

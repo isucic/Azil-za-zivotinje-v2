@@ -1,0 +1,12 @@
+.filter {
+    display: flex;
+    /* border: 1px solid black; */
+    align-items: center;}
+.filter p {
+    padding: 0;
+    margin: 0;
+}
+.filter input[type="radio"]{
+    padding: 0;
+    margin: 0;
+}

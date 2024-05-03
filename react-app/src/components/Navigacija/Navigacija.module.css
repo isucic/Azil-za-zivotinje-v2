@@ -1,0 +1,61 @@
+/* pozadina : #F1F3FA 
+ #EAAD16
+ #C6C6C6
+ #5B5B5B
+ #000000 footer
+*/
+.navigacija {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.7em 2em;
+    /* background-color:#0f5b43; */
+    border: 1px solid rgb(235, 231, 231);
+    box-shadow: 5px 3px rgb(244,239,239);
+}
+.logo {
+    width: 60px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+.navUl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.link {
+    color: #333333;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s;
+    margin: 0px 20px;
+    padding: 0.5em;
+    border-radius: 20px;;
+    border:none;
+    text-transform: uppercase;
+}
+.navLink{
+    padding: 20px 0px;
+}
+.navLink:hover{
+    padding: 20px 0px;
+    background-color: #EAAD16;
+    transition: 0.2s;
+}
+.login {
+    color: #333333;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.navbarLogin {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}

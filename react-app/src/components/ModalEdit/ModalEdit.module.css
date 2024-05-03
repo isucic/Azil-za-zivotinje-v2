@@ -1,0 +1,106 @@
+.overlay {
+    background-color: rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.modalContainer {
+    max-width:600px;
+    width: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.75);
+}
+
+.content {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+}
+
+.content form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.photoFrame {
+    width: 90%;
+    height: 250px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 3px rgba(231, 227, 227, 0.692);
+    transition: transform 0.2s ease-in-out;
+}
+/* .photoFrame:hover{
+    transform: scale(1.8);
+} */
+
+.photo{
+    border-radius: 5px;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.inputBox {
+    margin: 10px;
+    /* display:grid; */
+}
+
+.selectBox{
+    margin: 10px;
+}
+
+.textBox {
+    display: flex;
+    height: 80px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+ input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.closeBtn {
+    position: fixed;
+    top: 8px;
+    right: 8px;
+    font-size: 20px;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+.closeBtn:hover {
+    transform: scale(1.2);
+}
+
+.checkbox{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.checkbox input {
+    margin-left: 15px;
+}

@@ -1,0 +1,73 @@
+.mainpage {
+    justify-content: center;
+    align-items: center;
+    margin: 25px auto;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.75);
+    padding: 20px;
+
+}
+.mainpage .sveSkupa {
+    display: flex;
+}
+.leftContainer {
+    flex: 1
+}
+.rightContainer {
+    flex: 1;
+}
+.vrstaCip{
+    display: flex;
+    margin: 15px 0;
+    justify-content:space-between;
+    width: 80%;
+    align-items: center;
+}
+.vrstaBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Radio{
+    display: flex;
+    margin-right: 5px;
+}
+.cipiranBox {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.mainpage textarea {
+    width: 80%;
+    resize: none;
+}
+.mainpage input {
+    width: 80%;
+    margin-bottom: 10px;
+}
+.mainpage input[type="submit"]{
+    margin: 10px 0;
+    width: 100%;
+    cursor: pointer;
+}
+.photoFrame {
+    width: 90%;
+    height: 250px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 3px rgba(231, 227, 227, 0.692);
+}
+.photo{
+    border-radius: 5px;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.sveSkupa p {
+    margin-bottom: 5px;
+    margin-right: 10px;
+    font-weight: bold;
+}

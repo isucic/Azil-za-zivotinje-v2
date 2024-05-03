@@ -1,0 +1,58 @@
+.donacije {
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    /* border: 1px solid black; */
+}
+.sideBarDon{
+    flex:1;
+    /* border: 1px solid black; */
+}
+.donacije select, .donacije input, .donacije textarea {
+    width: 70%;
+    margin-bottom: 10px;
+    resize: none;
+}
+.popisVrstaDonacija {
+    flex:4;
+    /* border: 1px solid black; */
+}
+
+table {
+    /* border-collapse: collapse; */
+    width: 90%;
+    margin-top: 20px;
+}
+
+table th {
+    text-align: left;
+}
+table td {
+    padding: 10px 0;
+    /* border: 1px solid black; */
+}
+
+thead th {
+    border-bottom: 1px solid black;
+  }
+
+td button {
+    margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+    .donacije {
+        flex-direction: column;
+    }
+    .donacije select,
+    .donacije input,
+    .donacije textarea {
+        width: 100%;
+    }
+    .popisVrstaDonacija {
+        flex-basis: auto;
+    }
+    table {
+        width: 100%;
+    }
+}
