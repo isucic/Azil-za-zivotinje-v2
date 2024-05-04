@@ -3,6 +3,9 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const router = express.Router();
 const Korisnik = require('../models/korisnik')
+const provjeriToken = require('../middlewares/provjeriToken')
+const provjeriUlogu = require('../middlewares/provjeriUlogu');
+const provjeriAdmin = require('../middlewares/provjeriAdmin');
 
 router.use(express.json());
 
@@ -40,6 +43,14 @@ router.post("/registracija", async (req,res) => {
     res.status(200).send({token, message: "Korisnik uspješno registriran"})
   } catch (error) {
     res.status(500).send(error.message)
+  }
+})
+
+router.get("/role", provjeriToken, provjeriAdmin, async (req,res) => {
+  try {
+    res.json(true)
+  } catch (error) {
+    res.status(403).send(`Došlo je do greške pri provjeri uloge admina korisnika`)
   }
 })
 

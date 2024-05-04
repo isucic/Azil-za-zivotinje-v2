@@ -1,12 +1,12 @@
 import { useContext, useState } from 'react';
 import styles from './ModalNovaObavijest.module.css'
 import axios from 'axios';
-import userContext from '../../context/userContext'
+import UserContext from '../../context/userContext';
 
 function ModalNovaObavijest({open, onClose}){
 
-    const user = useContext(userContext)
-
+    const { isAdmin } = useContext(UserContext); // Dohvati setIsAdmin iz konteksta
+    
     const [novaOb, setNovaOb] = useState({
         naslov: "",
         tekst: "",
@@ -56,7 +56,7 @@ function ModalNovaObavijest({open, onClose}){
                          onChange={(e) => setNovaOb({...novaOb, [e.target.name]: e.target.value})} 
                         />
 
-                        {user && <div className={styles.vazno}>
+                        {isAdmin && <div className={styles.vazno}>
                             <p>Važno</p>
                             <input 
                              type="checkbox"

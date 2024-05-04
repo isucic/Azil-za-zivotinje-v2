@@ -1,5 +1,5 @@
 import styles from './ModalEdit.module.css'
-import { useState, useContext, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import {EditSelectInput, EditTextInput, EditCheckbox} from './EditInput';
 

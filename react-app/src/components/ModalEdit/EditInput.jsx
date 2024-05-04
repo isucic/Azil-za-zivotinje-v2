@@ -27,7 +27,7 @@ export function EditSelectInput({zivotinja, promjenaUlaza, name, lista}){
     });
 
     const handleChange = (e) => {
-        console.log(selectedValue)
+        // console.log(selectedValue)
         setSelectedValue(e.target.value)
         promjenaUlaza(e);
     }

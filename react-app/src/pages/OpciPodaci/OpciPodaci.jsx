@@ -7,10 +7,6 @@ function OpciPodaci(){
     return(
         <div className={styles.homepage}>
 
-            {/* <div className={styles.homepage1}>
-                Sa strane
-            </div> */}
-
             <div className={styles.homepage2}>
 
                 <PhotoSlider />

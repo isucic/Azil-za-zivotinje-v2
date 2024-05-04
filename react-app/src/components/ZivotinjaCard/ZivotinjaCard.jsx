@@ -2,13 +2,13 @@ import axios from 'axios'
 import { useContext, useState } from 'react'
 import styles from './ZivotinjaCard.module.css'
 import ModalEdit from '../ModalEdit/ModalEdit'
-import userContext from "../../context/userContext"
+import UserContext from '../../context/userContext';
 import PopUp from '../PopUpWindow/PopUp'
 
 function ZivotinjaCard({zivotinja, setUpdate}){
 
-    const user = useContext(userContext)
-    
+    const { isAdmin } = useContext(UserContext); // Dohvati setIsAdmin iz konteksta
+
     var ime = zivotinja.ime
     var vrsta = zivotinja.vrsta
     var udomljen = zivotinja.udomljen
@@ -55,7 +55,7 @@ function ZivotinjaCard({zivotinja, setUpdate}){
                 <ModalEdit zivotinja={zivotinja} open={openModal} onClose={() => setOpenModal(false)} setUpdate={setUpdate} setOpenModal={setOpenModal}/>
                 {!udomljen && 
                 <button onClick={() => handleUdomiBotun(id)} className={styles.udomibtn}>Udomi</button>}
-                {user && 
+                {isAdmin && 
                 <button className={styles.uredibtn} onClick={() => setOpenModal(true)}>Uredi</button>
                 }                
             </div>

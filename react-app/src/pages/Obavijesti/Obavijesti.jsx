@@ -3,6 +3,8 @@ import styles from './Obavijesti.module.css'
 import axios from 'axios'
 import ModalNovaObavijest from '../../components/ModalNovaObavijest/ModalNovaObavijest';
 import userContext from '../../context/userContext';
+import UserContext from '../../context/userContext';
+
 import { FaTrash } from 'react-icons/fa';
 import PopUp from '../../components/PopUpWindow/PopUp';
 
@@ -11,6 +13,7 @@ import PopUp from '../../components/PopUpWindow/PopUp';
 function Obavijesti(){
 
     const user = useContext(userContext)
+    const { isAdmin } = useContext(UserContext); // Dohvati setIsAdmin iz konteksta
 
     const [openModal, setOpenModal] = useState(false);
     const [obavijesti,setObavijesti] = useState([])
@@ -63,7 +66,7 @@ function Obavijesti(){
                             <p>{obavijest.tekst}</p>
                         </div>
 
-                        {user && 
+                        {isAdmin && 
                         <div className={styles.izbrisiBtn}>
                             <FaTrash className={styles.fatrash} onClick={() => handleIzbrisiObavijest(obavijest._id)}/>
                         </div>}

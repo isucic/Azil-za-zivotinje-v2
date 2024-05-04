@@ -1,10 +1,13 @@
 import { useContext,useState } from "react";
 import styles from './Donacije.module.css'
-import userContext from "../../context/userContext";
+import UserContext from "../../context/userContext";
 import axios from "axios";
 import PopUp from "../../components/PopUpWindow/PopUp";
 
 function DonacijeTable({donacije, kateg, setRefresh}){
+
+
+    const { isAdmin } = useContext(UserContext); // Dohvati setIsAdmin iz konteksta
 
     const [showLoginPopup, setShowLoginPopup] = useState(false);
     function handlePremjestiDonaciju(id){
@@ -26,7 +29,7 @@ function DonacijeTable({donacije, kateg, setRefresh}){
     }
 
     function handleIzbrisiDonaciju(id){
-        if(user && (kateg === "trazi" || kateg==="donirano")){
+        if(isAdmin && (kateg === "trazi" || kateg==="donirano")){
             axios
             .delete(`/donacije/${id}`, {
                 headers: {
@@ -58,8 +61,7 @@ function DonacijeTable({donacije, kateg, setRefresh}){
         })  
     }
 
-    const user = useContext(userContext)
-
+    // const user = useContext(userContext)
 
     return(
         <>
@@ -80,21 +82,21 @@ function DonacijeTable({donacije, kateg, setRefresh}){
                     <td>{donacija.opis}</td>
 
                     {/* U tablici Traži, samo korisnik vidi botun Doniraj */}
-                    {(!user && kateg=="trazi") &&  
+                    {(!isAdmin && kateg=="trazi") &&  
                         <td><button onClick={() => handlePremjestiDonaciju(donacija._id)}>Doniraj</button></td>}
 
                     {/* U tablici Traži, samo admin vidi botuni Donirano i Izbrisi */}
-                    {user && kateg=="trazi" && 
+                    {isAdmin && kateg=="trazi" && 
                         <td>
                             <button onClick={() => handlePremjestiDonaciju(donacija._id)}>Donirano</button>
                             <button onClick={() => handleIzbrisiDonaciju(donacija._id)}>Izbrisi</button>
                         </td>}
 
                     {/* U tablici Nudi, samo admin vidi botun Prihvati */}
-                    {user && kateg=="nudi" && <td><button onClick={() => handlePremjestiDonaciju(donacija._id)}>Prihvati</button></td>}
+                    {isAdmin && kateg=="nudi" && <td><button onClick={() => handlePremjestiDonaciju(donacija._id)}>Prihvati</button></td>}
 
                     {/* U tablici Donirano, samo admin ima pravo na botun Ponovi i izbrisi */}
-                    {user && kateg=="donirano" && 
+                    {isAdmin && kateg=="donirano" && 
                     <td>
                         <button onClick={() => kopijaUTrazimo(donacija)}>Ponovi</button>
                         <button onClick={() => handleIzbrisiDonaciju(donacija._id)}>Izbrisi</button>

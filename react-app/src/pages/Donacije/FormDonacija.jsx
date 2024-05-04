@@ -1,12 +1,10 @@
 import styles from './Donacije.module.css'
 import { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
-import userContext from '../../context/userContext'
 import PopUp from '../../components/PopUpWindow/PopUp'
 
 function FormDonacija({setRefresh}){
 
-    const user = useContext(userContext)
     const [tipDonacija, setTipDonacija] = useState([])
 
     const [podaci,setPodaci] = useState({
@@ -42,7 +40,7 @@ function FormDonacija({setRefresh}){
             if (res.status === 200) {
                 setRefresh(true)
             } else {
-                console.log("Ne radi")
+                console.log("Spremanje donacije nije uspjelo")
             }
          })
          .catch (error => {

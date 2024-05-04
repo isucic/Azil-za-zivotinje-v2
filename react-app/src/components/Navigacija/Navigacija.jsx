@@ -3,9 +3,7 @@ import styles from './Navigacija.module.css'
 import logo from '../images/icon.svg'
 import { useContext,useEffect,useState } from "react"
 import Toggle from '../ToggleSwitch/Toggle'
-import userContext from "../../context/userContext"
-import { Navigate } from "react-router-dom"
-import axios from "axios"
+import UserContext from '../../context/userContext';
 
 function Navigacija({action}){
 
@@ -24,16 +22,19 @@ function Navigacija({action}){
         navigate("/login")
     }
 
+    const { setIsAdmin, } = useContext(UserContext); // Dohvati setIsAdmin iz konteksta
+    const { isAdmin } = useContext(UserContext); // Dohvati setIsAdmin iz konteksta
     async function handleLogout(){
         try {
             localStorage.removeItem('token');
             setLoggedIn(false)
+            setIsAdmin(false)
+            
         } catch (error) {
             console.error("Greska prilikom odjave", error)
         }
     }
 
-    const user = useContext(userContext)
     return(
         <div className={styles.navigacija}>
             <Link to="/"><img src={logo} className={styles.logo}/></Link>
@@ -51,7 +52,7 @@ function Navigacija({action}){
                 <li className={styles.navLink}>
                     <Link to="/zivotinje" className={styles.link}>Životinje</Link>
                 </li>
-                {loggedIn && 
+                {isAdmin && 
                 <li className={styles.navLink}>
                     <Link to="/unosnovezivotinje" className={styles.link}>Unos Novih</Link>
                 </li>}
@@ -60,7 +61,7 @@ function Navigacija({action}){
             <div className={styles.navbarLogin}>
                 {/* <Link to="/login" className={styles.login}>Login</Link> */}
                 {/* <p>Admin</p> */}
-                <Toggle onChange={action}/>
+                {/* <Toggle onChange={action}/> */}
                 {!loggedIn ? (<button onClick={handleButtonLogin}>
                     Login
                 </button>) :

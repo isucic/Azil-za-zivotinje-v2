@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import styles from './Registracija.module.css'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import UserContext from '../../context/userContext';
+
 
 const Registracija = () => {
 
@@ -13,6 +15,7 @@ const Registracija = () => {
     let formValid = true;
 
     const navigate = useNavigate();
+    const { setIsAdmin } = useContext(UserContext); // Dohvati setIsAdmin iz konteksta
 
     function validateRegistracija() {
         if(username.length===0 && password.length===0 && email.length === 0){
@@ -38,10 +41,21 @@ const Registracija = () => {
         e.preventDefault();
         validateRegistracija();
         if (formValid){
-            axios.post("/registracija", {username, password})
+            axios.post("/registracija", {username, email, password, role})
             .then(response => {
                 localStorage.setItem("token", response.data.token)
-                navigate("/")
+                axios.get("/role", {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem('token')}`
+                    }
+                })
+                .then(roleResponse => {
+                    setIsAdmin(roleResponse.data) // Postavi isAdmin na true ako je admin, inače na false
+                    navigate("/")
+                })
+                .catch(error => {
+                    console.error('Greška prilikom dohvaćanja uloge korisnika:', error);
+                });
             })
             .catch(error => {
                 console.log("Greska kod prijave", error)
@@ -91,8 +105,8 @@ const Registracija = () => {
                     
 
                     {/* <input className={styles.loginBtn} type="submit" value="Login" /> */}
-                    <button className={styles.loginBtn} onClick={handleRegistracija}>Login</button>
-                    <p className={styles.noviRacun}>Ulogiraj se.</p>
+                    <button className={styles.loginBtn} onClick={handleRegistracija}>Registriraj se</button>
+                    <p className={styles.noviRacun} onClick={() => navigate("/login")}>Ulogiraj se.</p>
                 </form>
             </div>
         </div>

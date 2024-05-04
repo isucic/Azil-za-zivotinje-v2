@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import styles from './Login.module.css'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/AuthProvider';
+import UserContext from '../../context/userContext';
 
 const Login = () => {
 
@@ -12,6 +12,7 @@ const Login = () => {
     let formValid = true;
 
     const navigate = useNavigate();
+    const { setIsAdmin } = useContext(UserContext); // Dohvati setIsAdmin iz konteksta
 
     function validateLogin() {
         if(username.length===0 && password.length===0){
@@ -29,7 +30,6 @@ const Login = () => {
         else formValid=true;
     }
 
-    const auth = useAuth()
     function handleLogin(e){
         e.preventDefault();
         validateLogin();
@@ -37,12 +37,22 @@ const Login = () => {
             axios.post("/prijava", {username, password})
             .then(response => {
                 localStorage.setItem("token", response.data.token)
-                navigate("/")
+                axios.get("/role", {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem('token')}`
+                    }
+                })
+                .then(roleResponse => {
+                    setIsAdmin(roleResponse.data) // Postavi isAdmin na true ako je admin, inače na false
+                    navigate("/")
+                })
+                .catch(error => {
+                    console.error('Greška prilikom dohvaćanja uloge korisnika:', error);
+                });
             })
             .catch(error => {
                 console.log("Greska kod prijave", error)
             })
-            // auth.loginAction({username, password})
         }
         else {
             console.log(formErrors)
@@ -62,9 +72,8 @@ const Login = () => {
                         <input type="password" placeholder='Lozinka' value={password} onChange={(e) => setPassword(e.target.value)}/>
                     </div>
 
-                    {/* <input className={styles.loginBtn} type="submit" value="Login" /> */}
                     <button className={styles.loginBtn} onClick={handleLogin}>Login</button>
-                    <p className={styles.noviRacun}>Napravi račun za novog admina.</p>
+                    <p className={styles.noviRacun} onClick={() => navigate("/registracija")}>Napravi račun za novog admina.</p>
                 </form>
             </div>
         </div>
