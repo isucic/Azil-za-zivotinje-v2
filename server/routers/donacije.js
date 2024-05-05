@@ -10,7 +10,8 @@ router.get("/", async (req,res) => {
         const sveDonacije = await Donacija.find({}).populate('tip');
         res.json(sveDonacije);
     } catch (error) {
-        res.json(500).send(error.message)
+        // res.json(500).send(error.message)
+        next(error)
     }
 })
 
@@ -28,7 +29,9 @@ router.post("/", provjeriToken, async (req,res) => {
         await novaDonacija.save()
         res.status(200).send("Donacija uspjesno pohranjena")
     } catch (error) {
-        res.status(500).send(error.message)
+        // res.status(500).send(error.message)
+        next(error)
+
     }
 })
 
@@ -51,7 +54,8 @@ router.patch("/:id", provjeriToken, async (req,res) => {
         await Donacija.findByIdAndUpdate(req.params.id, {kategorija: novaKategorija}, {new:true});
         res.status(200).send("Kategorija donacije uspješno promijenjena");
     } catch (error) {
-        res.status(500).send(error.message);
+        // res.status(500).send(error.message);
+        next(error)
     }
 });
 
@@ -63,7 +67,8 @@ try {
     }
     res.send("Donacija izbrisana")
 } catch(error) {
-    res.status(500).send(error.message)
+    // res.status(500).send(error.message)
+    next(error)
 }
 })
 
@@ -72,7 +77,8 @@ router.get("/tip", async (req,res) => {
       const tipDonacije = await TipDonacije.find();
       res.json(tipDonacije)
     } catch (error) {
-      res.json(500).send(error.message)
+    //   res.json(500).send(error.message)
+    next(error)
     }
   })
 

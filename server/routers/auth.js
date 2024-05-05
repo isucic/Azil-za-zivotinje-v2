@@ -24,7 +24,8 @@ router.post("/prijava", async (req,res) => {
         res.status(401).send('Neispravni podaci za prijavu')
       }
     } catch (error) {
-      res.status(500).send(error.message)
+      // res.status(500).send(error.message)
+      next(error)
     }
 })
 
@@ -41,7 +42,8 @@ router.post("/registracija", async (req,res) => {
     )
     res.status(200).send({token, message: "Korisnik uspješno registriran"})
   } catch (error) {
-    res.status(500).send(error.message)
+    // res.status(500).send(error.message)
+    next(error)
   }
 })
 
@@ -49,7 +51,8 @@ router.get("/role", provjeriToken, provjeriAdmin, async (req,res) => {
   try {
     res.json(true)
   } catch (error) {
-    res.status(403).send(`Došlo je do greške pri provjeri uloge admina korisnika`)
+    // res.status(403).send(`Došlo je do greške pri provjeri uloge admina korisnika`)
+    next(error)
   }
 })
 

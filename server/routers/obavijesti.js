@@ -11,7 +11,8 @@ router.get("/", async (req,res) => {
       const sveObavijesti = await Obavijest.find();
       res.json(sveObavijesti)
     } catch (error) {
-      res.json(500).send(error.message)
+      // res.json(500).send(error.message)
+      next(error)
     }
 })
 
@@ -21,7 +22,8 @@ router.post("/", provjeriToken, async (req,res) => {
       await novaObavijest.save()
       res.status(200).send("Obavijest uspjesno spremljena")
     } catch (error) {
-      res.status(500).send(error.message)
+      // res.status(500).send(error.message)
+      next(error)
     }
 })
 
@@ -33,7 +35,8 @@ router.delete("/:id", provjeriToken, provjeriUlogu('admin'), async (req,res) => 
       }
       res.send("Obavijest izbrisana")
     } catch(error) {
-      res.status(500).send(error.message)
+      // res.status(500).send(error.message)
+      next(error)
     }
   })
 

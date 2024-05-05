@@ -1,8 +1,6 @@
 const express = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
 const cookieParser = require('cookie-parser')
 require('dotenv').config();
 
@@ -10,30 +8,22 @@ const donacijeRouter = require('./routers/donacije')
 const zivotinjeRouter = require('./routers/zivotinje')
 const obavijestiRouter = require('./routers/obavijesti')
 const authRouter = require('./routers/auth')
+const errorHandle = require("./middlewares/errorHandle")
+const logging = require("./middlewares/logging")
 
 const app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors());
 
-app.use((err, req, res, next) => {
-  const odgovor = process.env.NODE_ENV === "production" ? "Dogodila se greška" : err.stack;
-  res.status(500).send(odgovor);
-});
-
-app.use((req, res, next) => {
-  if (process.env.NODE_ENV === 'development') {
-    console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
-  }
-  next();
-});
-
+app.use(logging)
 
 app.use('/zivotinje', zivotinjeRouter)
 app.use('/donacije', donacijeRouter)
 app.use('/obavijesti', obavijestiRouter)
 app.use('/', authRouter)
 
+app.use(errorHandle)
 
 const ADRESA_BAZE = process.env.ADRESA_BAZE
 //Spajanje na bazu

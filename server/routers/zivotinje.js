@@ -26,7 +26,8 @@ router.get("/", async (req,res) => {
       )
       res.json(zivotinjeZaNaziv)
     } catch (error) {
-      res.status(500).send(error.message)
+      // res.status(500).send(error.message)
+      next(error)
     }
 })
 
@@ -47,7 +48,8 @@ router.post("/", provjeriToken, provjeriUlogu("admin"), async (req,res) => {
       await novaZivotinja.save()
       res.status(200).send("Zivotinja uspjesno spremljena")
     } catch (error) {
-      res.status(500).send(error.message)
+      // res.status(500).send(error.message)
+      next(error)
     }
 })
 
@@ -75,7 +77,8 @@ router.patch("/:id", provjeriToken, provjeriUlogu("admin"), async (req,res) => {
         }
         res.json(novaZivotinja)
     } catch (error) {
-      res.status(500).send(error.message)
+      // res.status(500).send(error.message)
+      next(error)
     }
 })
 
@@ -93,7 +96,8 @@ router.get("/tip", async (req,res) => {
     const vrsteZivotinja = await VrstaZivotinje.find()
     res.json(vrsteZivotinja)
   } catch (error) {
-    res.json(500).send(error.message)
+    // res.json(500).send(error.message)
+    next(error)
   }
 })
 
