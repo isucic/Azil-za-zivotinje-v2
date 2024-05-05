@@ -16,14 +16,21 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(cors());
 
+app.use((err, req, res, next) => {
+  const odgovor = process.env.NODE_ENV == "production" ? "Dogodila se greška" : err.stack;
+  res.status(500).send(odgovor);
+});
+
+
 app.use('/zivotinje', zivotinjeRouter)
 app.use('/donacije', donacijeRouter)
 app.use('/obavijesti', obavijestiRouter)
 app.use('/', authRouter)
 
 
+const ADRESA_BAZE = process.env.ADRESA_BAZE
 //Spajanje na bazu
-mongoose.connect('mongodb://127.0.0.1:27017/azil', {
+mongoose.connect(ADRESA_BAZE, {
   family: 4
 });
 // Instanca konekcije na bazu

@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken')
 const router = express.Router();
 const Korisnik = require('../models/korisnik')
 const provjeriToken = require('../middlewares/provjeriToken')
-const provjeriUlogu = require('../middlewares/provjeriUlogu');
 const provjeriAdmin = require('../middlewares/provjeriAdmin');
 
 router.use(express.json());
