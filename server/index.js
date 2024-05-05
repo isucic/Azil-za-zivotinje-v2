@@ -17,8 +17,15 @@ app.use(cookieParser())
 app.use(cors());
 
 app.use((err, req, res, next) => {
-  const odgovor = process.env.NODE_ENV == "production" ? "Dogodila se greška" : err.stack;
+  const odgovor = process.env.NODE_ENV === "production" ? "Dogodila se greška" : err.stack;
   res.status(500).send(odgovor);
+});
+
+app.use((req, res, next) => {
+  if (process.env.NODE_ENV === 'development') {
+    console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
+  }
+  next();
 });
 
 
