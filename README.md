@@ -1,4 +1,4 @@
-# Animal Shelter Website
+# Azil za životinje - Web Aplikacija
 
 Ovo je projekt web stranice azila za životinje, razvijen pomoću Reacta za frontend i Expressa za backend.
 
@@ -7,10 +7,6 @@ Ovo je projekt web stranice azila za životinje, razvijen pomoću Reacta za fron
 - [Opis Projekta](#opis-projekta)
 - [Tehnologije](#tehnologije)
 - [Postavljanje Projekta](#postavljanje-projekta)
-- [Struktura Direktorija](#struktura-direktorija)
-- [Upotreba](#upotreba)
-- [Doprinos](#doprinos)
-- [Licenca](#licenca)
 
 ## Opis Projekta
 
@@ -30,10 +26,10 @@ Slijedite ove korake za postavljanje i pokretanje projekta lokalno:
 ### Kloniranje Repozitorija
 
 ```sh
-git clone https://github.com/korisnickoime/animal-shelter-website.git
+git clone https://github.com/isucic/Azil-za-zivotinje-v2.git
 ```
 
-### Instalacija Završnosti
+### Instalacija
 
 #### Backend
 
