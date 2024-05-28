@@ -5,7 +5,7 @@ const provjeriUlogu = require('../middlewares/provjeriUlogu')
 const Zivotinja = require('../models/zivotinje')
 const VrstaZivotinje = require('../models/vrstaZivotinje')
 
-router.get("/", async (req,res) => {
+router.get("/", async (req,res,next) => {
     try {
       const sveZivotinje = await Zivotinja.find({})
       const zivotinjeZaNaziv = await Promise.all(
@@ -26,12 +26,11 @@ router.get("/", async (req,res) => {
       )
       res.json(zivotinjeZaNaziv)
     } catch (error) {
-      // res.status(500).send(error.message)
       next(error)
     }
 })
 
-router.post("/", provjeriToken, provjeriUlogu("admin"), async (req,res) => {
+router.post("/", provjeriToken, provjeriUlogu("admin"), async (req,res,next) => {
     const zivotinja = {
       ime: req.body.ime,
       vrsta: req.body.vrsta,
@@ -48,12 +47,11 @@ router.post("/", provjeriToken, provjeriUlogu("admin"), async (req,res) => {
       await novaZivotinja.save()
       res.status(200).send("Zivotinja uspjesno spremljena")
     } catch (error) {
-      // res.status(500).send(error.message)
       next(error)
     }
 })
 
-router.patch("/:id", provjeriToken, provjeriUlogu("admin"), async (req,res) => {
+router.patch("/:id", provjeriToken, provjeriUlogu("admin"), async (req,res,next) => {
     try {
       // console.log(req.body)
       let novaZivotinja;
@@ -82,21 +80,20 @@ router.patch("/:id", provjeriToken, provjeriUlogu("admin"), async (req,res) => {
     }
 })
 
-router.patch("/udomi/:id", provjeriToken, async (req,res) => {
+router.patch("/udomi/:id", provjeriToken, async (req,res,next) => {
     try {
       await Zivotinja.findByIdAndUpdate(req.params.id, { udomljen: req.body.udomljen }, { new: true }).populate('vrsta');
       res.status(200).send("Status udomiteljstva uspješno promijenjen");
     } catch (error) {
-      res.status(500).send(error.message);
+      next(error);
     }
 })
 
-router.get("/tip", async (req,res) => {
+router.get("/tip", async (req,res,next) => {
   try {
     const vrsteZivotinja = await VrstaZivotinje.find()
     res.json(vrsteZivotinja)
   } catch (error) {
-    // res.json(500).send(error.message)
     next(error)
   }
 })

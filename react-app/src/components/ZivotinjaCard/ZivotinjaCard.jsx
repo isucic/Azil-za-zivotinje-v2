@@ -34,22 +34,28 @@ function ZivotinjaCard({zivotinja, setUpdate}){
        
     }
 
-    const backgroundColor = udomljen ? "#faeaea" : "transparent";
+    const backgroundColor = udomljen ? "#d2e7d6" : "transparent";
 
     return(
         <div className={styles.zivotinjaCard} style={{ backgroundColor }}>
-            <p className={styles.ime}>{ime}</p>
-
             <div className={styles.photoFrame}>
                 <img className={styles.photo} src={photo} />
             </div>
+
+            <div className={styles.imeBox}>
+                <p className={styles.ime}>{ime}</p>
+                <div className={styles.linija}></div>
+
+            </div>
+
 
             <div className={styles.vrstaStatus}>
                 <p>{vrsta}</p>
                 {udomljen ? <p className={styles.status}>Udomljen</p> : <p className={styles.status}>Nije udomljen</p>}
             </div>
 
-            <p className={styles.opis}>{opis}</p>
+            
+            <p className={styles.opis}>{opis}...</p>
 
             <div className={styles.botuni}>
                 <ModalEdit zivotinja={zivotinja} open={openModal} onClose={() => setOpenModal(false)} setUpdate={setUpdate} setOpenModal={setOpenModal}/>
@@ -57,7 +63,9 @@ function ZivotinjaCard({zivotinja, setUpdate}){
                 <button onClick={() => handleUdomiBotun(id)} className={styles.udomibtn}>Udomi</button>}
                 {isAdmin && 
                 <button className={styles.uredibtn} onClick={() => setOpenModal(true)}>Uredi</button>
-                }                
+                }
+                 {/* Ovdje dodajemo prazni element koji zauzima prostor */}
+                {!udomljen && !isAdmin && <div className={styles.placeholderButton}></div>}               
             </div>
             {showLoginPopup && (<PopUp setShowLoginPopup={setShowLoginPopup}/>)}
 

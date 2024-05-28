@@ -57,7 +57,7 @@ function Obavijesti(){
             <div className={styles.listaObavijesti}>
                 {obavijesti.sort((a, b) => new Date(b.datum) - new Date(a.datum)).map(obavijest => (
                     <div className={styles.obavijest} key={obavijest._id}>
-                        <div className={styles.traka} style={{backgroundColor: obavijest.vazno ? "rgba(228, 22, 22, 0.534)" : "#eaae1658"}}>
+                        <div className={styles.traka} style={{backgroundColor: obavijest.vazno ? "#4CAF50" : "#eaae1658"}}>
                             <p>{obavijest.naslov}</p>
                              {obavijest.vazno && <p>VAŽNO</p>}
                             <p>{obavijest.datum.substring(0,10)}</p>

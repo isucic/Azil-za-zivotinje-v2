@@ -89,7 +89,7 @@ function DonacijeTable({donacije, kateg, setRefresh}){
                     {isAdmin && kateg=="trazi" && 
                         <td>
                             <button onClick={() => handlePremjestiDonaciju(donacija._id)}>Donirano</button>
-                            <button onClick={() => handleIzbrisiDonaciju(donacija._id)}>Izbrisi</button>
+                            <button onClick={() => handleIzbrisiDonaciju(donacija._id)}>Izbriši</button>
                         </td>}
 
                     {/* U tablici Nudi, samo admin vidi botun Prihvati */}
@@ -99,7 +99,7 @@ function DonacijeTable({donacije, kateg, setRefresh}){
                     {isAdmin && kateg=="donirano" && 
                     <td>
                         <button onClick={() => kopijaUTrazimo(donacija)}>Ponovi</button>
-                        <button onClick={() => handleIzbrisiDonaciju(donacija._id)}>Izbrisi</button>
+                        <button onClick={() => handleIzbrisiDonaciju(donacija._id)}>Izbriši</button>
                     </td>}
 
                </tr>

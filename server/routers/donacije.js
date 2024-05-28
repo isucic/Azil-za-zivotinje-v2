@@ -5,7 +5,7 @@ const provjeriUlogu = require('../middlewares/provjeriUlogu')
 const Donacija = require('../models/donacije')
 const TipDonacije = require('../models/tipDonacije')
 
-router.get("/", async (req,res) => {
+router.get("/", async (req,res,next) => {
     try {
         const sveDonacije = await Donacija.find({}).populate('tip');
         res.json(sveDonacije);
@@ -15,7 +15,7 @@ router.get("/", async (req,res) => {
     }
 })
 
-router.post("/", provjeriToken, async (req,res) => {
+router.post("/", provjeriToken, async (req,res,next) => {
     try {
         console.log(req.body)
         let kategorija;
@@ -36,7 +36,7 @@ router.post("/", provjeriToken, async (req,res) => {
 })
 
 // imamo mogucnost samo promjene kategorije donacije, zato nije potrebno slati podatke
-router.patch("/:id", provjeriToken, async (req,res) => {
+router.patch("/:id", provjeriToken, async (req,res,next) => {
     try {
         let novaKategorija;
         const trenutnaDonacija = await Donacija.findById(req.params.id);
@@ -59,7 +59,7 @@ router.patch("/:id", provjeriToken, async (req,res) => {
     }
 });
 
-router.delete("/:id", provjeriToken, provjeriUlogu('admin'), async (req,res) => {
+router.delete("/:id", provjeriToken, provjeriUlogu('admin'), async (req,res,next) => {
 try {
     const donacija = await Donacija.findByIdAndDelete(req.params.id)
     if(!donacija){
@@ -72,7 +72,7 @@ try {
 }
 })
 
-router.get("/tip", async (req,res) => {
+router.get("/tip", async (req,res,next) => {
     try {
       const tipDonacije = await TipDonacije.find();
       res.json(tipDonacije)

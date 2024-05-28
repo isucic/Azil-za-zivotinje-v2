@@ -12,12 +12,11 @@ function OpciPodaci(){
                 <PhotoSlider />
                 <div className={styles.mainInfo}>
                     <h1>O nama</h1>
-                    <p>Azil za životinje "Prijatelj" osnovan je 1995. godine s ciljem pružanja pomoći napuštenim i zlostavljanim životinjama u našoj regiji. Od samog osnutka, azil se bori protiv nebrige, zlostavljanja i napuštanja životinja, a nesebičnim radom volontera i donatora uspijevaju osigurati siguran dom za mnoge napuštene pse i mačke.</p>
-                    <p>Nalazimo se na prostranom imanju koje pruža idealno okruženje za životinje, s mnogo prostora za trčanje, igru i druženje. Naši stručni veterinari i volonteri posvećeno rade na brizi za svaku životinju, kako bi im osigurali najbolju njegu i kvalitetan život u ugodnom okruženju.</p>
-                    <p>
-                    Uz njegu i brigu o životinjama, također se trudimo podizati svijest o važnosti odgovornog vlasništva nad kućnim ljubimcima, te educirati zajednicu o važnosti zaštite životinja. Naši programi uključuju volontiranje, edukaciju, kampanje protiv zlostavljanja životinja, te organiziranje događaja i donatorskih akcija kako bi osigurali dugoročno financiranje azila.
-                    </p>
-                    <p>U azilu "Prijatelj" smo ponosni na našu predanost u pomaganju napuštenim životinjama i u stvaranju boljeg svijeta za sve nas.</p>
+                    
+                    <p>Dobrodošli u naš azil za životinje, oazu ljubavi i sigurnosti za naše dlakave prijatelje! U našem azilu pružamo dom i brigu za raznolike životinje koje su se našle u potrebi. Bilo da su napuštene, izgubljene ili pretrpjele zlostavljanje, svaka životinja koja dolazi u naše ruke dobiva ljubav, pažnju i priliku za novi početak.</p>
+                    <p>Naša misija je osigurati da svaka životinja pronađe svoj zauvijek dom, gdje će biti voljena i cijenjena kao član obitelji. U našem azilu ćete susresti različite osobnosti - od veselih pasa spremnih za šetnju do nježnih mačaka koje žude za pažnjom. Svaka životinja ima svoju priču i svoj jedinstveni šarm, čekajući priliku da osvoji vaša srca.</p>
+                    <p>Pružite ljubav i dom nekom od naših predivnih štićenika i zajedno ćemo stvarati sretne priče o usvajanju koje traju cijeli život. Pridružite nam se u našoj misiji da svaka šapa pronađe svoj dom, jer u našem azilu, ljubav je uvijek dobrodošla!</p>                    <p>U azilu "Prijatelj" smo ponosni na našu predanost u pomaganju napuštenim životinjama i u stvaranju boljeg svijeta za sve nas.</p>
+
 
                 </div>
                 <div className={styles.karta}>

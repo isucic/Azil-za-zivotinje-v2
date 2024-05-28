@@ -6,7 +6,7 @@ const Obavijest = require('../models/obavijesti')
 
 router.use(express.json());
 
-router.get("/", async (req,res) => {
+router.get("/", async (req,res,next) => {
     try {
       const sveObavijesti = await Obavijest.find();
       res.json(sveObavijesti)
@@ -16,7 +16,7 @@ router.get("/", async (req,res) => {
     }
 })
 
-router.post("/", provjeriToken, async (req,res) => {
+router.post("/", provjeriToken, async (req,res,next) => {
     try{
       const novaObavijest = new Obavijest({...req.body})
       await novaObavijest.save()
@@ -27,7 +27,7 @@ router.post("/", provjeriToken, async (req,res) => {
     }
 })
 
-router.delete("/:id", provjeriToken, provjeriUlogu('admin'), async (req,res) => {
+router.delete("/:id", provjeriToken, provjeriUlogu('admin'), async (req,res,next) => {
     try {
       const obavijest = await Obavijest.findByIdAndDelete(req.params.id)
       if(!obavijest){
@@ -35,7 +35,6 @@ router.delete("/:id", provjeriToken, provjeriUlogu('admin'), async (req,res) => 
       }
       res.send("Obavijest izbrisana")
     } catch(error) {
-      // res.status(500).send(error.message)
       next(error)
     }
   })

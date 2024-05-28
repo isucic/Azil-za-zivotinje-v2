@@ -62,6 +62,7 @@ function Navigacija({action}){
                 {/* <Link to="/login" className={styles.login}>Login</Link> */}
                 {/* <p>Admin</p> */}
                 {/* <Toggle onChange={action}/> */}
+                {isAdmin && <p className="" style={{ marginRight: '20px' }}>admin</p>}
                 {!loggedIn ? (<button onClick={handleButtonLogin}>
                     Login
                 </button>) :

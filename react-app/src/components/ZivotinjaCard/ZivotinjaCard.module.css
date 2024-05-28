@@ -6,10 +6,11 @@
     flex-direction: column;
     align-items: center;
     padding: 10px 5px;
-    box-shadow: 0px 0px 15px 0px rgba(189, 188, 188, 0.75); 
+    box-shadow: 0px 0px 50px 0px rgba(216, 215, 215, 0.75); 
     /* box-sizing: border-box; */
     border: 1px solid rgb(235, 231, 231);
     transition: border 0.3s ease;
+    flex-grow: 1;
 }
 .zivotinjaCard:hover {
     border: 1px solid rgb(181, 177, 177);
@@ -36,25 +37,33 @@ p{
     margin: 0;
 }
 
+
+.imeBox{
+    width: 100%;
+    max-width: calc(100% - 20px);
+    align-items: flex-start; /* Postavljanje poravnanja na početak u okviru flex konteksta */
+    margin-top: 20px;
+
+}
 .ime {
-    text-align:left;
     font-weight: bold;
-    margin-bottom: 10px;
     font-size: 20px;
 }
 
 .vrstaStatus {
     margin: 20px auto;
     width: 100%;
+    max-width: calc(100% - 30px);
     display: inline-flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .opis {
     background-color: antiquewhite;
-    padding: 6px;
+    padding: 15px 6px;
     width: 90%;
-    text-align: center;
+    /* text-align: center; */
+    font-style: italic;
 }
 
 .botuni {
@@ -62,7 +71,26 @@ p{
     justify-content: space-between;
     width: 90%;
     margin-bottom: 0;
+    height: 50px; /* Prilagodi visinu botuna prema potrebama */
+
 }
 .status{
     font-weight: bold;
+}
+
+.udomibtn {
+    display: block; 
+}
+.uredibtn {
+    display: block; 
+}
+.placeholderButton {
+    width: 100px; /* Prilagodi širinu praznog elementa prema potrebama */
+}
+
+.linija {
+    /* width: 90%; Širina linije */
+    height: 0.5px; /* Debljina linije */
+    background-color: #4CAF50; /* Boja linije */
+    margin-top: 10px;
 }
