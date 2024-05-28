@@ -8,8 +8,8 @@ import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 
 // if (ProcessingInstruction.env.NODE_ENV === 'production') disableReactDevTools()
 
-// axios.defaults.baseURL = "http://localhost:3000"
-axios.defaults.baseURL = "https://animalshelter.onrender.com"
+axios.defaults.baseURL = "http://localhost:3000"
+// axios.defaults.baseURL = "https://animalshelter.onrender.com"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   
