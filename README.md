@@ -32,3 +32,55 @@ Slijedite ove korake za postavljanje i pokretanje projekta lokalno:
 ```sh
 git clone https://github.com/korisnickoime/animal-shelter-website.git
 ```
+
+### Instalacija Završnosti
+
+#### Backend
+
+1. Idite u direktorij `server`:
+   ```sh
+   cd server
+   ```
+2. Instalirajte potrebne pakete:
+   ```sh
+   npm install
+   ```
+
+#### Frontend
+
+1. Idite u direktorij `react-app`:
+   ```sh
+   cd ../react-app
+   ```
+2. Instalirajte potrebne pakete:
+   ```sh
+   npm install
+   ```
+
+### Pokretanje Projekta
+
+#### Backend
+
+1. Vratite se u direktorij `server` (ako već niste):
+   ```sh
+   cd server
+   ```
+2. Pokrenite server:
+   ```sh
+   npm run start
+   ```
+
+#### Frontend
+
+1. Idite u direktorij `react-app`:
+   ```sh
+   cd ../react-app
+   ```
+2. Pokrenite server:
+   ```sh
+   npm run dev
+   ```
+
+### Konfiguracija
+
+Provjerite datoteku `config.js` u `server` direktoriju za konfiguraciju baze podataka i drugih postavki.
