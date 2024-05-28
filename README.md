@@ -17,7 +17,7 @@ Cilj ovog projekta je stvoriti web stranicu koja omogućava korisnicima pregled 
 - **Frontend:** React
 - **Backend:** Express
 - **Baza podataka:** MongoDB
-- **Stilski okvir:** Tailwind
+- **Stilski okvir:** CSS
 
 ## Postavljanje Projekta
 
